@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
+import 'package:nasa_app/Widgets/parameterPage.dart';
 import 'package:nasa_app/resultsPage.dart';
 
 const myApiKey = "AIzaSyDLWD1z3zGbJ6qv3njHqCG_grtxMEMTm_o";
@@ -59,7 +60,8 @@ class _HomePageState extends State<HomePage> {
         //     ' ' +
         //     selectedPlace.geometry!.location.lat.toString());
         print('place picked');
-        search(result.formattedAddress);
+        openParametersPage(result.formattedAddress,
+            result.geometry?.location.lng, result.geometry?.location.lat);
         // setState(() {
         //   selectedPlace = result;
         // });
@@ -105,18 +107,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void search(address) {
+  void openParametersPage(address, lat, lon) {
     // do a request to the server
     print('got data');
-    var data = <dynamic>['labas', 'rytas', 'jums'];
     Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ResultsPage(
-          title: address.toString(),
-          data: data,
-        ),
-      ),
-    );
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParameterPage(
+            title: address,
+            locationLat: lat,
+            locationLon: lon,
+          ),
+        ));
   }
 }

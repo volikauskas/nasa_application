@@ -38,6 +38,8 @@ dependencies:
   google_maps_flutter_web: ^0.3.1
   geolocator: ^7.6.2
   google_maps_place_picker: ^2.1.0-nullsafety.3
+  grouped_buttons: ^1.0.4
+  date_field: ^2.1.2
 
 dev_dependencies:
   flutter_test:

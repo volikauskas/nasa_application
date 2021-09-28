@@ -29,7 +29,7 @@ class ResultsPageState extends State<ResultsPage> {
         ));
   }
 
-  final _expanded = [false, false, false];
+  // final _expanded = [false, false, false];
 
   Widget _buildPanel() {
     return ExpansionPanelList(

@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: must_be_immutable
 class GMap extends StatefulWidget {
+  GMap({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => GMapState();
 
@@ -60,7 +63,8 @@ class GMapState extends State<GMap> {
   @override
   Widget build(BuildContext context) {
     return GoogleMap(
-      initialCameraPosition: CameraPosition(target: LatLng(0, 0), zoom: 0),
+      initialCameraPosition:
+          const CameraPosition(target: LatLng(0, 0), zoom: 0),
       onMapCreated: _onMapCreated,
       mapType: MapType.normal,
       myLocationButtonEnabled: true,
@@ -76,6 +80,5 @@ class GMapState extends State<GMap> {
             widget.currentPosition.latitude, widget.currentPosition.longitude),
         zoom: 15.0)));
     // lol
-    var a = 0;
   }
 }

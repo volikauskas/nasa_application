@@ -1,8 +1,9 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
-
-import 'gmap.dart';
+import 'package:nasa_app/resultsPage.dart';
 
 const myApiKey = "AIzaSyDLWD1z3zGbJ6qv3njHqCG_grtxMEMTm_o";
 void main() {
@@ -29,7 +30,9 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+  // ignore: prefer_const_constructors
   static final kInitialPosition = LatLng(-33.8567844, 151.213108);
+  final routeName = '/';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -49,14 +52,17 @@ class _HomePageState extends State<HomePage> {
       automaticallyImplyAppBarLeading: false,
 
       //usePlaceDetailSearch: true,
+      // ignore: duplicate_ignore
       onPlacePicked: (result) {
         // Navigator.of(context).pop();
         // print(selectedPlace.geometry!.location.lat.toString() +
         //     ' ' +
         //     selectedPlace.geometry!.location.lat.toString());
-        setState(() {
-          selectedPlace = result;
-        });
+        print('place picked');
+        search(result.formattedAddress);
+        // setState(() {
+        //   selectedPlace = result;
+        // });
       },
       //forceSearchOnZoomChanged: true,
       autocompleteLanguage: "en",
@@ -96,6 +102,21 @@ class _HomePageState extends State<HomePage> {
       // },
 
       // Text(selectedPlace.formattedAddress ?? ""),
+    );
+  }
+
+  void search(address) {
+    // do a request to the server
+    print('got data');
+    var data = <dynamic>['labas', 'rytas', 'jums'];
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultsPage(
+          title: address.toString(),
+          data: data,
+        ),
+      ),
     );
   }
 }

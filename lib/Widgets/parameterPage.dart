@@ -25,48 +25,66 @@ class ParameterPage extends StatefulWidget {
 
 class ParameterPageState extends State<ParameterPage> {
   String _selectedRadio = 'monthly';
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title.toString()),
       ),
-      body: ListView(
-        children: [
-          _locationFields(),
-          _datePickers(),
-          _radioButtons(),
-          Center(
-            child: ElevatedButton(
-              onPressed: _search,
-              child: const Text('Search'),
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            _locationFields(),
+            _datePickers(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _dropTimeList(),
+                  _dropParamList(),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _search() {
-    var data = <dynamic>['labas', 'rytas', 'jums'];
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ResultsPage(
-          title: widget.title.toString(),
-          data: data,
+            Center(
+              child: ElevatedButton(
+                onPressed: _search,
+                child: const Text('Search'),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
+  void _search() {
+    if (_formKey.currentState!.validate()) {
+      var data = <dynamic>['labas', 'rytas', 'jums'];
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultsPage(
+            title: widget.title.toString(),
+            data: data,
+          ),
+        ),
+      );
+    }
+  }
+
   Widget _datePickers() {
+    var now = DateTime.now();
+    var _startDate = DateTime(now.year - 1, now.month, now.day, now.hour);
+    var _endDate = DateTime.now();
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: DateTimeFormField(
+            initialDate: _startDate,
             decoration: const InputDecoration(
               hintStyle: TextStyle(color: Colors.black45),
               errorStyle: TextStyle(color: Colors.redAccent),
@@ -76,10 +94,16 @@ class ParameterPageState extends State<ParameterPage> {
             ),
             mode: DateTimeFieldPickerMode.date,
             autovalidateMode: AutovalidateMode.always,
-            validator: (e) =>
-                (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+            validator: (e) {
+              if (e != null) {
+                if (e.isAfter(_endDate)) {
+                  return 'Must be before the End date';
+                }
+              }
+              return null;
+            },
             onDateSelected: (DateTime value) {
-              print(value);
+              _startDate = value;
             },
           ),
         ),
@@ -87,7 +111,7 @@ class ParameterPageState extends State<ParameterPage> {
           padding: const EdgeInsets.all(16.0),
           child: DateTimeFormField(
             decoration: const InputDecoration(
-              hintStyle: TextStyle(color: Colors.yellowAccent),
+              hintStyle: TextStyle(color: Colors.blueAccent),
               errorStyle: TextStyle(color: Colors.redAccent),
               border: OutlineInputBorder(),
               suffixIcon: Icon(Icons.event_note),
@@ -95,10 +119,18 @@ class ParameterPageState extends State<ParameterPage> {
             ),
             mode: DateTimeFieldPickerMode.date,
             autovalidateMode: AutovalidateMode.always,
-            validator: (e) =>
-                (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+            validator: (e) {
+              if (e != null) {
+                if (e.isBefore(_startDate)) {
+                  return 'Must be after the Start date';
+                } else if (false) {
+                  // add limited date interval
+                }
+                return null;
+              }
+            },
             onDateSelected: (DateTime value) {
-              print(value);
+              _endDate = value;
             },
           ),
         ),
@@ -106,27 +138,29 @@ class ParameterPageState extends State<ParameterPage> {
     );
   }
 
-  TextEditingController _lonController = TextEditingController();
-  TextEditingController _latController = TextEditingController();
+  final TextEditingController _lonController = TextEditingController();
+  final TextEditingController _latController = TextEditingController();
 
   Widget _locationFields() {
-    _lonController.text = widget.locationLon.toString();
-    _latController.text = widget.locationLat.toString();
+    _lonController.text = widget.locationLon.toStringAsPrecision(8);
+    _latController.text = widget.locationLat.toStringAsPrecision(8);
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: TextField(
+            enabled: false,
             controller: _lonController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: "Longtitude",
+              labelText: "Longitude",
             ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: TextField(
+            enabled: false,
             controller: _latController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -169,6 +203,59 @@ class ParameterPageState extends State<ParameterPage> {
               });
             }),
       ],
+    );
+  }
+
+  var _selectedTimeDrop = 'Monthly';
+
+  Widget _dropTimeList() {
+    return DropdownButton<String>(
+      value: _selectedTimeDrop,
+      icon: const Icon(Icons.arrow_downward),
+      iconSize: 24,
+      elevation: 16,
+      underline: Container(
+        height: 2,
+        color: Colors.deepPurpleAccent,
+      ),
+      onChanged: (String? newValue) {
+        setState(() {
+          _selectedTimeDrop = newValue!;
+        });
+      },
+      items: <String>['Hourly', 'Daily', 'Monthly']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+
+  var _selectedParamDrop = 'Energy';
+  Widget _dropParamList() {
+    return DropdownButton<String>(
+      value: _selectedParamDrop,
+      icon: const Icon(Icons.arrow_downward),
+      iconSize: 24,
+      elevation: 16,
+      underline: Container(
+        height: 2,
+        color: Colors.deepPurpleAccent,
+      ),
+      onChanged: (String? newValue) {
+        setState(() {
+          _selectedParamDrop = newValue!;
+        });
+      },
+      items: <String>['Energy', 'Temperature', 'Humidity', 'Soil']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
     );
   }
 }

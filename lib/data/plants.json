@@ -1,0 +1,2085 @@
+{
+    "plants": [
+        {
+            "Botanical_name": "Abutilon hybridum",
+            "Common_name": "Flowering Maple",
+            "L": "1",
+            "T": "1",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Acalypha hispida",
+            "Common_name": "Chenile Plant",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Achimenes hybrids",
+            "Common_name": "Magic Flower",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Acorus calamus",
+            "Common_name": "Sweet Flag",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Acorus gramineus",
+            "Common_name": "Miniature Sweet Flag",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Adiantum raddianum",
+            "Common_name": "Maidenhair Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Adromischus cristatus",
+            "Common_name": "Crinkle-Leaf Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Adromischus festivus",
+            "Common_name": "Plover Eggs",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Aechmea fasciata",
+            "Common_name": "Silver Vase",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Aechmea miniata\u00a0\u2018Discolor\u2019",
+            "Common_name": "Purplish Coral Berry",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Aechmea\u00a0\u2018Royal Wine\u2019",
+            "Common_name": "Royal Wine Bromeliad",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Aeschynanthus marmoratus",
+            "Common_name": "Zebra Basket Vine",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Aeschynanthus pulcher",
+            "Common_name": "Lipstick Vine",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Agave Americana\u00a0\u2018Marginata\u2019",
+            "Common_name": "Variegated Century Plant",
+            "L": "1",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Agave victoriae-reginae",
+            "Common_name": "Queen Agave",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Aglaonema modestum",
+            "Common_name": "Chinese Evergreen",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Aglaonema\u00a0\u2018Silver King\u2019",
+            "Common_name": "Silver King",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Aglaonema\u00a0\u2018Silver Queen\u2019",
+            "Common_name": "Silver Queen",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Allamanda cathartica",
+            "Common_name": "Allamanda",
+            "L": "1",
+            "T": "2",
+            "H": "1-2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Alloplectus nummularia",
+            "Common_name": "Miniature Pouch Flower",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Aloe aborescens",
+            "Common_name": "Candelabra Plant",
+            "L": "1",
+            "T": "3",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Aloe barbadensis",
+            "Common_name": "Medicine Plant",
+            "L": "1",
+            "T": "3",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Aloe brevifolia",
+            "Common_name": "Brevifolia Aloe",
+            "L": "1",
+            "T": "3",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Ananas comosus",
+            "Common_name": "Pineapple",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Anthurium clarinervium",
+            "Common_name": "Dwarf Crystal Anthurium",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Anthurium hookeri",
+            "Common_name": "Bird\u2019s Nest Anthurium",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Anthurium scherzeranum",
+            "Common_name": "Flamingo Flower",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Aphelandra squarrosa",
+            "Common_name": "Zebra Plant",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Araucaria heterophylla",
+            "Common_name": "Norfolk Island Pine",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ardissa crenata",
+            "Common_name": "Ardisia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Asparagus densiflorus\u00a0\u2018Myers\u2019",
+            "Common_name": "Plume Asparagus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Asparagus densiflorus\u00a0\u2018Sprengeri\u2019",
+            "Common_name": "Foxtail Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Asparagus falcatus",
+            "Common_name": "Sickle Thorn",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Aspidistra elatior",
+            "Common_name": "Cast Iron Plant",
+            "L": "3-4",
+            "T": "2",
+            "H": "3",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Asplenium daucifolium",
+            "Common_name": "Mother Fern",
+            "L": "3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Asokebuyn budys",
+            "Common_name": "Bird\u2019s Nest Fern",
+            "L": "3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Astrophytum myriostigma",
+            "Common_name": "Bishop\u2019s Cap",
+            "L": "2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Beaucarnea recurvata",
+            "Common_name": "Ponytail",
+            "L": "1",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Begonia cubensis",
+            "Common_name": "Cuban Holly",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Begonia metallica",
+            "Common_name": "Metallic Leaf Begonia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Begonia x rex-cultorum",
+            "Common_name": "Rex Begonia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Begonia semperflorens",
+            "Common_name": "Wax Begonia",
+            "L": "1-2",
+            "T": "1",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Billbergia nutans",
+            "Common_name": "Queen\u2019s Tears",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Billbergia pyramidalis",
+            "Common_name": "Urn Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Billbergia zebrina",
+            "Common_name": "Zebra Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Bougainvillea spp.",
+            "Common_name": "Bougainvillea",
+            "L": "1",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Brassaia actinophylla",
+            "Common_name": "Schefflera",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Brassaia arboricola",
+            "Common_name": "Dwarf Schefflera",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Caladium spp.",
+            "Common_name": "Caladium",
+            "L": "2",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Calathea insignis",
+            "Common_name": "Rattlesnake Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Calathea makoyana",
+            "Common_name": "Peacock Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Calathea micans",
+            "Common_name": "Miniature Maranta",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Calathea roseopicta",
+            "Common_name": "Rose Calathea",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Calceolaria crenatiflora",
+            "Common_name": "Slipperwort",
+            "L": "2",
+            "T": "1",
+            "H": "1",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Callisia elegans",
+            "Common_name": "Striped Inch Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Carissa grandiflora\u00a0\u2018Bonsai\u2019",
+            "Common_name": "Bonsai Natal Plum",
+            "L": "1-2",
+            "T": "2-3",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Carissa grandiflora\u00a0\u2018Boxwood Beauty\u2019",
+            "Common_name": "Boxwood Beauty",
+            "L": "1-2",
+            "T": "2-3",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Caryota mitis",
+            "Common_name": "Fishtail Palm",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Catharanthus roseus",
+            "Common_name": "Madagascar Periwinkle",
+            "L": "1-2",
+            "T": "2",
+            "H": "1-2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Cereus peruvianus",
+            "Common_name": "Peruvian Apple Cactus",
+            "L": "1",
+            "T": "2-3",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Ceropegia woodii",
+            "Common_name": "Rosary Vine",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Chamaedorea elegans",
+            "Common_name": "Parlor Palm",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chamaedorea erumpens",
+            "Common_name": "Bamboo Palm",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chamaerops humilis",
+            "Common_name": "European Fan Palm",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chirita lavandulacea",
+            "Common_name": "Hindustan Gentian",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Chlorophytum comosum \u2018Variegatum\u2019",
+            "Common_name": "Variegated Spider Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chlorophytum comosum\u00a0\u2018Vittatum\u2019",
+            "Common_name": "Spider Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chrysalidocarpus lutescens",
+            "Common_name": "Areca Palm",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Chrysanthemum morifolium",
+            "Common_name": "Chrysanthemum",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Cissus antarctica",
+            "Common_name": "Kangaroo Vine",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Cissus rhombifolia",
+            "Common_name": "Grape Leaf Ivy",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Cissus rotundifolia",
+            "Common_name": "Wax Cissus",
+            "L": "2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Cissus striata",
+            "Common_name": "Miniature Grape Ivy",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Citrofortunella mitis",
+            "Common_name": "Calamondin Orange",
+            "L": "1-2",
+            "T": "1",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Clivia miniata\u00a0\u2018Grandiflora\u2019",
+            "Common_name": "Kafir Lily",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Codiaeum variegatum",
+            "Common_name": "Croton",
+            "L": "1",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Coffeaa arabica",
+            "Common_name": "Coffee",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Coleus blumeri",
+            "Common_name": "Coleus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Colummea hybrids",
+            "Common_name": "Goldfish Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Cordyline terminalis",
+            "Common_name": "Ti Plant",
+            "L": "2",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Crassula argentea",
+            "Common_name": "Jade Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Crassula falcata",
+            "Common_name": "Propeller Plant",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Crassula hemisphaerica",
+            "Common_name": "Arab\u2019s Turban",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Crassula lycopodioides",
+            "Common_name": "Toy Cypress",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Crassula schmidtii",
+            "Common_name": "Red Flowering Crassula",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Crassula teres",
+            "Common_name": "Rattlesnake Tail",
+            "L": "2-3",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Crossandra infundibuliformis",
+            "Common_name": "Crossandra",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Cryptanthus bivittatus\u00a0\u2018Minor\u2019",
+            "Common_name": "Dwarf Rose Stripe Star",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Cryptanthus fosteranus",
+            "Common_name": "Stiff Pheasant Leaf",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Cryptanthus zonatus",
+            "Common_name": "Zebra Plant",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Cyrtomium falcatum\u00a0\u2018Rochfordianum\u2019",
+            "Common_name": "House Holly Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Davallia fejeensis",
+            "Common_name": "Rabbit\u2019s Foot Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Dieffenbachia\u00a0\u2018Exotica Perfection\u2019",
+            "Common_name": "Exotica Perfection",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dieffenbachia maculata",
+            "Common_name": "Spotted Dumb Cane",
+            "L": "3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dizygotheca elegantissima",
+            "Common_name": "False Aralia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dracaena deremensis\u00a0\u2018Janet Craig\u2019",
+            "Common_name": "Janet Craig",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dracaena deremensis\u00a0\u2018Warneckii\u2019",
+            "Common_name": "Warneckii",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dracaena fragrans\u00a0\u2018Massangeana\u2019",
+            "Common_name": "Corn Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dracaena marginata",
+            "Common_name": "Marginata",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dracaena surculosa",
+            "Common_name": "Gold Dust Dracaena",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dyckia brevifolia",
+            "Common_name": "Miniature Agave",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Dyckia fosterana",
+            "Common_name": "Silver and Gold Dyckia",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Echeveria agavoides",
+            "Common_name": "Molded Wax",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Echeveria elegans",
+            "Common_name": "Mexican Snowball",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Echinocereus reichenbachii",
+            "Common_name": "Lace Cactus",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Epidendrum atropurpureum",
+            "Common_name": "Spice Orchid",
+            "L": "2",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "4"
+        },
+        {
+            "Botanical_name": "Epiphyllum hybrids",
+            "Common_name": "Orchid Cacti",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Epipremnum aureum",
+            "Common_name": "Golden Pothos",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Epipremnum aureum\u00a0\u2018Marble Queen\u2019",
+            "Common_name": "Marble Queen",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Episcia cupreata",
+            "Common_name": "Flame Violet",
+            "L": "2",
+            "T": "2-3",
+            "H": "1",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Episcia dianthiflora",
+            "Common_name": "Lace-Flower Vine",
+            "L": "2",
+            "T": "2-3",
+            "H": "1",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Episcia reptans",
+            "Common_name": "Scarlet Violet",
+            "L": "2",
+            "T": "2-3",
+            "H": "1",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Euphorbia coeralescens",
+            "Common_name": "Blue Euphorbia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2-3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Euphorbia mammillaris",
+            "Common_name": "Corncob Cactus",
+            "L": "1",
+            "T": "2",
+            "H": "2-3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Euphorbia milii splendens",
+            "Common_name": "Crown-of-Thorns",
+            "L": "1",
+            "T": "2",
+            "H": "2-3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Euphorbia pulcherrima",
+            "Common_name": "Poinsettia",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Euphorbia tirucalli",
+            "Common_name": "Milkbush",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Fatshedera lizei",
+            "Common_name": "Botanical Wonder Plant",
+            "L": "2-3",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Fatsia japonica",
+            "Common_name": "Japanese Aralia",
+            "L": "3-4",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus benjamina",
+            "Common_name": "Weeping Fig",
+            "L": "1-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus deltoidea",
+            "Common_name": "Mistletoe Ficus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus elastica\u00a0\u2018Decora\u2019",
+            "Common_name": "Rubber Plant",
+            "L": "1-3",
+            "T": "2-3",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus lyrata",
+            "Common_name": "Fiddle-Leaf Fig",
+            "L": "1-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus pumila\u00a0\u2018Minima\u2019",
+            "Common_name": "Dwarf Creeping Fig",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus retusa",
+            "Common_name": "Cuban Laurel",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus sagittata",
+            "Common_name": "Rooting Fig",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ficus willdemaniana",
+            "Common_name": "Dwarf Fiddle-Leaf Fig",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Fittonia verschaffeltii",
+            "Common_name": "Red-Nerved Fittonia",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Fittonia verschaffeltii argyroneura",
+            "Common_name": "Silver-Nerved Fittonia",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Fuchsia hybrida",
+            "Common_name": "Fuchsias",
+            "L": "2",
+            "T": "1-2",
+            "H": "1",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Gasteria hybrida",
+            "Common_name": "Ox Tongue",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Graptopetalum amethystinum",
+            "Common_name": "Jewel Leaf Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2-3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Guzmania lingulata\u00a0\u2018Major\u2019",
+            "Common_name": "Scarlet Star",
+            "L": "2",
+            "T": "2",
+            "H": "1",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Guzmania monostachia",
+            "Common_name": "Striped Torch",
+            "L": "2",
+            "T": "2",
+            "H": "1",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Gynura aurantiaca\u00a0\u2018Purple Passion\u2019",
+            "Common_name": "Purple Passion",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Haworthia cuspidata",
+            "Common_name": "Star Window Plant",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Haworthia fasciata",
+            "Common_name": "Zebra Haworthia",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Haworthia subfasciata",
+            "Common_name": "Little Zebra Plant",
+            "L": "2",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Haworthia truncata",
+            "Common_name": "Clipped Window Plant",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Hedera canariensis",
+            "Common_name": "Algerian Ivy",
+            "L": "2-3",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Hedera helix",
+            "Common_name": "English Ivy",
+            "L": "2-3",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Hemigraphis alternata",
+            "Common_name": "Waffle Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Hibiscus rosa-sinensis",
+            "Common_name": "Chinese Hibiscus",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Hippeastrum hybrids",
+            "Common_name": "Amaryllis",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Howea belmoreana",
+            "Common_name": "Belmore Sentry Palm",
+            "L": "3-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Howea forsterana",
+            "Common_name": "Kentia Palm",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Hoya carnosa\u00a0\u2018Variegata\u2019",
+            "Common_name": "Wax Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2-3",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Hoya kerrii",
+            "Common_name": "Sweetheart Hoya",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Hyacinthus orientalis",
+            "Common_name": "Hyacinth",
+            "L": "2",
+            "T": "1-2",
+            "H": "2",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Impatiens wallerana\u00a0\u2018Variegata\u2019",
+            "Common_name": "Busy Lizzie Impatiens",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Ixora coccinea",
+            "Common_name": "Ixora",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Jatropha integerrima",
+            "Common_name": "Peregrian",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Justicia brandegeana",
+            "Common_name": "Shrimp Plant",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Kalanchoe blossfeldiana",
+            "Common_name": "Christmas Kalanchoe",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Kalanchoe pumila",
+            "Common_name": "Dwarf Purple Kalanchoe",
+            "L": "1-2",
+            "T": "2",
+            "H": "2-3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Kalanchoe tomentosa",
+            "Common_name": "Panda Plant",
+            "L": "1-2",
+            "T": "2",
+            "H": "2-3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Malvaviscus arboreus",
+            "Common_name": "Turk\u2019s Cap",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Mammillaria bocasana",
+            "Common_name": "Powder Puff",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Manettia inflata",
+            "Common_name": "Firecracker Plant",
+            "L": "2",
+            "T": "2",
+            "H": "1-2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Maranta leuconeura erythroneura",
+            "Common_name": "Red Nerve Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Maranta leuconeura kerchoviana",
+            "Common_name": "Prayer Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Mikania ternata",
+            "Common_name": "Plush Vine",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Monstera deliciosa",
+            "Common_name": "Philodendron Pertusum",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Monstera obliqua",
+            "Common_name": "Window Leaf",
+            "L": "3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Nautilocalyx lynchii",
+            "Common_name": "Black Alloplectus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Neoregelia carolinae\u00a0\u2018Tricolor\u2019",
+            "Common_name": "Tricolor Bromeliad",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Neoregelia spectabilis",
+            "Common_name": "Fingernail Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Neoregelia zonata",
+            "Common_name": "Zonata",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Nephrolepis exaltata\u00a0\u2018Bostoniensis\u2019",
+            "Common_name": "Boston Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "2",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Nephrolepis exaltata\u00a0\u2018Fluffy Ruffles\u2019",
+            "Common_name": "Fluffy Ruffles",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "2",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Nidularium innocentii nana",
+            "Common_name": "Miniature Bird\u2019s Nest",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Opuntia vilis",
+            "Common_name": "Little Tree Cactus",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Opuntia vulgaris",
+            "Common_name": "Irish Mittens",
+            "L": "1-2",
+            "T": "2",
+            "H": "3",
+            "W": "3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Oxalis flava",
+            "Common_name": "Finger Oxalis",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Oxalis rubra",
+            "Common_name": "Red Oxalis",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Pachyphytum oviferum",
+            "Common_name": "Pearly Moonstones",
+            "L": "1-2",
+            "T": "2",
+            "H": "2-3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Pachystachys lutea",
+            "Common_name": "Yellow Shrimp Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Paphiopedilum hybrids",
+            "Common_name": "Ladyslipper Orchids",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1-2",
+            "S": "4"
+        },
+        {
+            "Botanical_name": "Pedilanthus tithymaloides\u00a0\u2018Variegatus\u2019",
+            "Common_name": "Devil\u2019s Backbone",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Pelargonium hortorum",
+            "Common_name": "House Geranium",
+            "L": "1-2",
+            "T": "1-2",
+            "H": "2-3",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Pelargoniium peltatum",
+            "Common_name": "Ivy Geranium",
+            "L": "1-2",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Pellaea rotundifolia",
+            "Common_name": "Button Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1-2",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Pellionia pulchra",
+            "Common_name": "Satin Pellionia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1-2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Pentas lanceolata",
+            "Common_name": "Egyptian Star Cluster",
+            "L": "1",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Peperomia caperata",
+            "Common_name": "Emerald Ripple",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Peperomia crassifolia",
+            "Common_name": "Leather Peperomia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Peperomia obtusifolia",
+            "Common_name": "Baby Rubber Tree",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Philodendron bipennifolium",
+            "Common_name": "Fiddle-Leaf Philodendron",
+            "L": "3-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Philodendron\u00a0\u2018Emerald Queen\u2019",
+            "Common_name": "Emerald Queen",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Philodendron\u00a0\u2018Florida\u2019",
+            "Common_name": "Florida",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Philodendron scandens oxycardium",
+            "Common_name": "Heart-Leaf Philodendron",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Philodendron selloum",
+            "Common_name": "Selloum",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Phoenix roebelenii",
+            "Common_name": "Pigmy Date Palm",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Pilea cadierei",
+            "Common_name": "Aluminum Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Pilea microphylla",
+            "Common_name": "Artillery Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Platycerium bifurcatum",
+            "Common_name": "Staghorn Fern",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "6"
+        },
+        {
+            "Botanical_name": "Plectranthus australis",
+            "Common_name": "Swedish Ivy",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Plectranthus australis",
+            "Common_name": "Candle Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Podocarpus macrophyllus",
+            "Common_name": "Podocarpus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Polyscias balfouriana\u00a0\u2018Marginata\u2019",
+            "Common_name": "Variegated Balfour Aralia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Polyscias fruticosa",
+            "Common_name": "Ming Aralia",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Rhapis excelsa",
+            "Common_name": "Lady Palm",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Rhododendron hybrids",
+            "Common_name": "Azaleas",
+            "L": "2",
+            "T": "1-2",
+            "H": "1",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Ruellia graeciznas",
+            "Common_name": "Red-Spray Ruellia",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "1"
+        },
+        {
+            "Botanical_name": "Saintpaulia hybrids",
+            "Common_name": "African Violets",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Sansevieria parva",
+            "Common_name": "Parva Sansevieria",
+            "L": "2-3",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Sansevieria trifasciata\u00a0\u2018Hahnii\u2019",
+            "Common_name": "Birdsnest Sansevieria",
+            "L": "2-4",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Sansevieria trifasciata\u00a0\u2018Laurentii\u2019",
+            "Common_name": "Gold-Banded Sansevieria",
+            "L": "2-4",
+            "T": "2",
+            "H": "3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Saxifraga stolonifera",
+            "Common_name": "Strawberry Geranium",
+            "L": "2-3",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Schlumbergera bridgesii",
+            "Common_name": "Christmas Cactus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Schlumbergera truncata",
+            "Common_name": "Christmas Cactus",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Scindapsus pictus",
+            "Common_name": "Silver Pothos",
+            "L": "3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Sedum spectabile",
+            "Common_name": "Showy Sedum",
+            "L": "1-2",
+            "T": "1-2",
+            "H": "2-3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Sempervivum arachniodeum",
+            "Common_name": "Cow Web Houseleek",
+            "L": "1-2",
+            "T": "1-2",
+            "H": "2-3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Setcreasea pallida\u00a0\u2018Purple Heart\u2019",
+            "Common_name": "Purple Heart",
+            "L": "1-2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Sinningia speciosa",
+            "Common_name": "Gloxinia",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "2",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Soleirolia soleirolii",
+            "Common_name": "Baby Tears",
+            "L": "2-3",
+            "T": "2",
+            "H": "1-2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Spathiphyllum\u00a0\u2018Clevelandii\u2019",
+            "Common_name": "Peace Lily",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Spathiphyllum\u00a0\u2018Mauna Loa\u2019",
+            "Common_name": "Mauna Loa",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "1",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Stapelia nobilis",
+            "Common_name": "Carrion Flower",
+            "L": "1-2",
+            "T": "2",
+            "H": "2-3",
+            "W": "2-3",
+            "S": "5"
+        },
+        {
+            "Botanical_name": "Streptocarpus x hybridus",
+            "Common_name": "Cape Primrose",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "7"
+        },
+        {
+            "Botanical_name": "Strobilanthes dyeranum",
+            "Common_name": "Persian Shield",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Syngonium podophyllum",
+            "Common_name": "Nephthytis",
+            "L": "2-4",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Trillandsia bulbosa",
+            "Common_name": "Dancing Bulb",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Tillandsia lindenii",
+            "Common_name": "Blue-Flowered Torch",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Tolmiea menziesii",
+            "Common_name": "Piggyback Plant",
+            "L": "2",
+            "T": "1-2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Tradescantia blossfeldiana",
+            "Common_name": "Flowering Inch Plant",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Tradescantia sillamontana",
+            "Common_name": "White Velvet",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Vriesea splendens",
+            "Common_name": "Flaming Sword",
+            "L": "2",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "3"
+        },
+        {
+            "Botanical_name": "Yucca elephantipes",
+            "Common_name": "Spineless Yucca",
+            "L": "2",
+            "T": "2",
+            "H": "3",
+            "W": "2",
+            "S": "2"
+        },
+        {
+            "Botanical_name": "Zebrina pendula",
+            "Common_name": "Wandering Jew",
+            "L": "2-3",
+            "T": "2",
+            "H": "2",
+            "W": "2",
+            "S": "2"
+        }
+
+
+    ]
+}

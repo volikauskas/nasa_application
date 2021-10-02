@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nasa_app/plant.dart';
@@ -19,6 +20,7 @@ class ResultsPage extends StatefulWidget {
 
 class ResultsPageState extends State<ResultsPage> {
   @override
+  // ignore: must_call_super
   void initState() {
     // convertData();
     getPlants();
@@ -49,7 +51,7 @@ class ResultsPageState extends State<ResultsPage> {
 
   Widget _energyPanel() {
     return Card(
-      color: Colors.yellowAccent[100],
+      color: Colors.yellow[50],
       elevation: 5,
       child: ExpansionTile(
         collapsedTextColor: Colors.black87,
@@ -88,12 +90,44 @@ class ResultsPageState extends State<ResultsPage> {
                 ),
               ),
             )),
-        const Placeholder(
-          fallbackHeight: 200,
+        SizedBox(
+          height: 300,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: LineChart(
+              LineChartData(
+                  backgroundColor: Colors.white,
+                  titlesData: titlesData,
+                  axisTitleData: axisTitles,
+                  lineBarsData: <LineChartBarData>[
+                    LineChartBarData(spots: <FlSpot>[
+                      FlSpot(2, 5),
+                      FlSpot(3, 6),
+                      FlSpot(4, 8),
+                      FlSpot(5, 6),
+                      FlSpot(6, 5),
+                    ]),
+                  ]),
+              swapAnimationDuration: Duration(milliseconds: 150), // Optional
+              swapAnimationCurve: Curves.linear,
+            ),
+          ),
         ),
       ],
     );
   }
+
+  FlTitlesData get titlesData => FlTitlesData(
+        rightTitles: SideTitles(showTitles: false),
+        topTitles: SideTitles(showTitles: false),
+      );
+
+  FlAxisTitleData get axisTitles => FlAxisTitleData(
+        show: true,
+        bottomTitle:
+            AxisTitle(showTitle: true, titleText: 'bottom axis, units'),
+        leftTitle: AxisTitle(showTitle: true, titleText: 'left axis, units'),
+      );
 
   Widget _plantsPanel() {
     return Card(

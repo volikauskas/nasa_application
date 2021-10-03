@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         //     selectedPlace.geometry!.location.lat.toString());
         print('place picked');
         openParametersPage(result.formattedAddress,
-            result.geometry?.location.lng, result.geometry?.location.lat);
+            result.geometry?.location.lat, result.geometry?.location.lng);
         // setState(() {
         //   selectedPlace = result;
         // });

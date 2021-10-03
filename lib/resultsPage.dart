@@ -6,12 +6,14 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nasa_app/plant.dart';
+import 'package:nasa_app/searchres.dart';
 
 class ResultsPage extends StatefulWidget {
-  const ResultsPage({Key? key, required this.data, required this.title})
+  ResultsPage({Key? key, required this.data, required this.title})
       : super(key: key);
 
-  final List<dynamic> data;
+  SearchRes data;
+  final dataLabels = ["Light", "Temperature", "Humidity", "Soil Wetness"];
   final String title;
 
   @override
@@ -22,7 +24,7 @@ class ResultsPageState extends State<ResultsPage> {
   @override
   // ignore: must_call_super
   void initState() {
-    // convertData();
+    convertData();
     getPlants();
     // filterPlants();
   }
@@ -35,6 +37,27 @@ class ResultsPageState extends State<ResultsPage> {
       ),
       body: _buildPanel(),
     );
+  }
+
+  void convertData() {
+    for (int i = 0; i < widget.data.results.length; i++) {
+      widget.data.results[i].values = noBrackets(widget.data.results[i].values);
+    }
+  }
+
+  List<String> noBrackets(List<String> data) {
+    var newList = <String>[];
+    for (int i = 0; i < data.length; i++) {
+      var value;
+      if (i < data.length - 2) {
+        value = data[i].split('[')[1].split(']')[0];
+      } else {
+        value = data[i].split('[')[1].split(']')[0];
+      }
+      print(value);
+      newList.add(value);
+    }
+    return newList;
   }
 
   Widget _buildPanel() {
@@ -59,14 +82,14 @@ class ResultsPageState extends State<ResultsPage> {
         title: const Text('Parameters'),
         children: <Widget>[
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: 500,
             child: ListView.builder(
-                itemCount: 20,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: _graph("Temperature"),
-                  );
+                      padding: const EdgeInsets.all(8.0),
+                      child: _graph(widget.dataLabels[index],
+                          widget.data.results[index], index));
                 }),
           ),
         ],
@@ -74,7 +97,7 @@ class ResultsPageState extends State<ResultsPage> {
     );
   }
 
-  Widget _graph(title) {
+  Widget _graph(String title, Results results, index) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -98,15 +121,11 @@ class ResultsPageState extends State<ResultsPage> {
               LineChartData(
                   backgroundColor: Colors.white,
                   titlesData: titlesData,
-                  axisTitleData: axisTitles,
+                  axisTitleData: axisTitles(results.values, title),
                   lineBarsData: <LineChartBarData>[
-                    LineChartBarData(spots: <FlSpot>[
-                      FlSpot(2, 5),
-                      FlSpot(3, 6),
-                      FlSpot(4, 8),
-                      FlSpot(5, 6),
-                      FlSpot(6, 5),
-                    ]),
+                    LineChartBarData(
+                      spots: _getSpots(results.values, index),
+                    ),
                   ]),
               swapAnimationDuration: Duration(milliseconds: 150), // Optional
               swapAnimationCurve: Curves.linear,
@@ -122,12 +141,21 @@ class ResultsPageState extends State<ResultsPage> {
         topTitles: SideTitles(showTitles: false),
       );
 
-  FlAxisTitleData get axisTitles => FlAxisTitleData(
+  FlAxisTitleData axisTitles(List<String> values, String title) =>
+      FlAxisTitleData(
         show: true,
-        bottomTitle:
-            AxisTitle(showTitle: true, titleText: 'bottom axis, units'),
-        leftTitle: AxisTitle(showTitle: true, titleText: 'left axis, units'),
+        bottomTitle: AxisTitle(showTitle: true, titleText: 'Time'),
+        leftTitle: AxisTitle(
+            showTitle: true,
+            titleText: title + ', ' + values[values.length - 2]),
       );
+
+  List<FlSpot> _getSpots(List<String> values, index) {
+    var _length = (index == 3 ? values.length - 3 : values.length - 2);
+    return List.generate(_length, (i) {
+      return FlSpot(i * 1.0, double.parse(values[i]));
+    });
+  }
 
   Widget _plantsPanel() {
     return Card(
@@ -139,7 +167,7 @@ class ResultsPageState extends State<ResultsPage> {
         title: const Text('Suggested plants'),
         children: <Widget>[
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: 500,
             child: ListView.builder(
                 itemCount: plantList.plants.length,
                 itemBuilder: (context, index) {

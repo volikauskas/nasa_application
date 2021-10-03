@@ -41,6 +41,7 @@ dependencies:
   grouped_buttons: ^1.0.4
   date_field: ^2.1.2
   fl_chart: ^0.40.0
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:

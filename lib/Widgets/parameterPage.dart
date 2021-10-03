@@ -1,20 +1,24 @@
 // ignore_for_file: file_names
 
+import 'dart:convert';
+
 import 'package:date_field/date_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import '../resultsPage.dart';
+import '../searchres.dart';
 // ignore: import_of_legacy_library_into_null_safe
 
 // ignore: must_be_immutable
 class ParameterPage extends StatefulWidget {
-  ParameterPage(
-      {Key? key,
-      required this.title,
-      required this.locationLat,
-      required this.locationLon})
-      : super(key: key);
+  ParameterPage({
+    Key? key,
+    required this.title,
+    required this.locationLat,
+    required this.locationLon,
+  }) : super(key: key);
 
   var locationLon = 0.0;
   var locationLat = 0.0;
@@ -45,7 +49,7 @@ class ParameterPageState extends State<ParameterPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _dropTimeList(),
-                  _dropParamList(),
+                  // _dropParamList(),
                 ],
               ),
             ),
@@ -61,9 +65,13 @@ class ParameterPageState extends State<ParameterPage> {
     );
   }
 
-  void _search() {
+  void _search() async {
     if (_formKey.currentState!.validate()) {
-      var data = <dynamic>['labas', 'rytas', 'jums'];
+      var url =
+          "http://192.168.0.4:5000/api/freq=$_selectedTimeDrop&start_year=${_startDate.year}${_startDate.month.toString().padLeft(2, '0')}${_startDate.day.toString().padLeft(2, '0')}&end_year=${_endDate.year}${_endDate.month.toString().padLeft(2, '0')}${_endDate.day.toString().padLeft(2, '0')}&long=${widget.locationLon}&lat=${widget.locationLat}";
+      final response = await http.get(Uri.parse(url));
+      // print(response.statusCode);
+      SearchRes data = SearchRes.fromJson(jsonDecode(response.body));
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -157,76 +165,70 @@ class ParameterPageState extends State<ParameterPage> {
   //   );
   // }
 
-  final _datePickersVisible = true;
-
   final _firstDate = DateTime(1970);
-  final _lastDate = DateTime(2020);
+  final _lastDate = DateTime(2021);
   var now = DateTime.now();
 
-  var _startDate = DateTime(DateTime.now().year - 1, DateTime.now().month,
-      DateTime.now().day, DateTime.now().hour);
-  var _endDate = DateTime.now();
+  var _startDate = DateTime(2018);
+  var _endDate = DateTime(2019);
 
   Widget _datePickers() {
-    return Visibility(
-      visible: _datePickersVisible,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: DateTimeFormField(
-              // firstDate: _firstDate,
-              // lastDate: _lastDate,
-              initialDate: _startDate,
-              decoration: const InputDecoration(
-                hintStyle: TextStyle(color: Colors.black45),
-                errorStyle: TextStyle(color: Colors.redAccent),
-                border: OutlineInputBorder(),
-                suffixIcon: Icon(Icons.event_note),
-                labelText: 'Start date',
-              ),
-              mode: DateTimeFieldPickerMode.date,
-              autovalidateMode: AutovalidateMode.always,
-              validator: (e) {
-                if (e != null) {
-                  if (e.isAfter(_endDate)) {
-                    return 'Must be before the End date';
-                  }
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: DateTimeFormField(
+            firstDate: _firstDate,
+            lastDate: _lastDate,
+            initialDate: _startDate,
+            decoration: const InputDecoration(
+              hintStyle: TextStyle(color: Colors.black45),
+              errorStyle: TextStyle(color: Colors.redAccent),
+              border: OutlineInputBorder(),
+              suffixIcon: Icon(Icons.event_note),
+              labelText: 'Start date',
+            ),
+            mode: DateTimeFieldPickerMode.date,
+            autovalidateMode: AutovalidateMode.always,
+            validator: (e) {
+              if (e != null) {
+                if (e.isAfter(_endDate)) {
+                  return 'Must be before the End date';
+                }
+              }
+              return null;
+            },
+            onDateSelected: (DateTime value) {
+              _startDate = value;
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: DateTimeFormField(
+            decoration: const InputDecoration(
+              hintStyle: TextStyle(color: Colors.blueAccent),
+              errorStyle: TextStyle(color: Colors.redAccent),
+              border: OutlineInputBorder(),
+              suffixIcon: Icon(Icons.event_note),
+              labelText: 'End date',
+            ),
+            mode: DateTimeFieldPickerMode.date,
+            autovalidateMode: AutovalidateMode.always,
+            validator: (e) {
+              if (e != null) {
+                if (e.isBefore(_startDate)) {
+                  return 'Must be after the Start date';
                 }
                 return null;
-              },
-              onDateSelected: (DateTime value) {
-                _startDate = value;
-              },
-            ),
+              }
+            },
+            onDateSelected: (DateTime value) {
+              _endDate = value;
+            },
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: DateTimeFormField(
-              decoration: const InputDecoration(
-                hintStyle: TextStyle(color: Colors.blueAccent),
-                errorStyle: TextStyle(color: Colors.redAccent),
-                border: OutlineInputBorder(),
-                suffixIcon: Icon(Icons.event_note),
-                labelText: 'End date',
-              ),
-              mode: DateTimeFieldPickerMode.date,
-              autovalidateMode: AutovalidateMode.always,
-              validator: (e) {
-                if (e != null) {
-                  if (e.isBefore(_startDate)) {
-                    return 'Must be after the Start date';
-                  }
-                  return null;
-                }
-              },
-              onDateSelected: (DateTime value) {
-                _endDate = value;
-              },
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -298,7 +300,7 @@ class ParameterPageState extends State<ParameterPage> {
   //   );
   // }
 
-  var _selectedTimeDrop = 'Monthly';
+  var _selectedTimeDrop = 'monthly';
 
   Widget _dropTimeList() {
     return DropdownButton<String>(
@@ -308,14 +310,14 @@ class ParameterPageState extends State<ParameterPage> {
       elevation: 16,
       underline: Container(
         height: 2,
-        color: Colors.deepPurpleAccent,
+        color: Colors.blueAccent,
       ),
       onChanged: (String? newValue) {
         setState(() {
           _selectedTimeDrop = newValue!;
         });
       },
-      items: <String>['Hourly', 'Daily', 'Monthly']
+      items: <String>['hourly', 'daily', 'monthly']
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
@@ -325,29 +327,29 @@ class ParameterPageState extends State<ParameterPage> {
     );
   }
 
-  var _selectedParamDrop = 'Energy';
-  Widget _dropParamList() {
-    return DropdownButton<String>(
-      value: _selectedParamDrop,
-      icon: const Icon(Icons.arrow_downward),
-      iconSize: 24,
-      elevation: 16,
-      underline: Container(
-        height: 2,
-        color: Colors.deepPurpleAccent,
-      ),
-      onChanged: (String? newValue) {
-        setState(() {
-          _selectedParamDrop = newValue!;
-        });
-      },
-      items: <String>['Energy', 'Temperature', 'Humidity', 'Soil']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-    );
-  }
+  // var _selectedParamDrop = 'All';
+  // Widget _dropParamList() {
+  //   return DropdownButton<String>(
+  //     value: _selectedParamDrop,
+  //     icon: const Icon(Icons.arrow_downward),
+  //     iconSize: 24,
+  //     elevation: 16,
+  //     underline: Container(
+  //       height: 2,
+  //       color: Colors.deepPurpleAccent,
+  //     ),
+  //     onChanged: (String? newValue) {
+  //       setState(() {
+  //         _selectedParamDrop = newValue!;
+  //       });
+  //     },
+  //     items: <String>['All', 'Energy', 'Temperature', 'Humidity', 'Soil']
+  //         .map<DropdownMenuItem<String>>((String value) {
+  //       return DropdownMenuItem<String>(
+  //         value: value,
+  //         child: Text(value),
+  //       );
+  //     }).toList(),
+  //   );
+  // }
 }

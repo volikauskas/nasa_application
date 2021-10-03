@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/widgets.dart';
 import 'package:nasa_app/plant.dart';
 import 'package:nasa_app/searchres.dart';
 
@@ -89,6 +89,16 @@ class ResultsPageState extends State<ResultsPage> {
           _energyPanel(),
           _plantsPanel(),
           const Image(image: AssetImage('lib/data/nasa_app_icon.png')),
+          const Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            child: Text(
+              '''Here are two sections:\n\n"Parameters" contains an analysis on energy, temperature, humidity and soil wetness, based on the location you indicated at the start and time resolution you told us at a later screen. Note that the x-axis is for every data entry you requested (f.e. 'hourly' and 'last week') and y-axis is for one of the four variables. We also calculated an average value so you would not have to.
+
+"Suggested plants" contains a database of plants that is sorted based on the goodness of fit. What we mean by that, is that we look at the sunlight (in ft-c units), temperature (C), humidity (%) and soil wetness (%) and do some comparison against the preferred plant's growth conditions. The ones that match best are at the top, whilst the least suggested are at the bottom.''',
+              style: TextStyle(fontSize: 15),
+              textAlign: TextAlign.justify,
+            ),
+          ),
         ],
       ),
     );
@@ -147,38 +157,47 @@ class ResultsPageState extends State<ResultsPage> {
             )),
         Align(
             alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                "Daily average: " +
-                    _getAverageValue(averagesPerDay, index) +
-                    " " +
-                    results.values[results.values.length - 2],
-                style: const TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-            )),
+            child: (results.values[0].compareTo('-999.0') != 0
+                ? Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "Daily average: " +
+                          _getAverageValue(averagesPerDay, index) +
+                          " " +
+                          results.values[results.values.length - 2],
+                      style: const TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  )
+                : null)),
         SizedBox(
           height: 300,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: LineChart(
-              LineChartData(
-                  backgroundColor: Colors.white,
-                  titlesData: titlesData,
-                  axisTitleData: axisTitles(results.values, title),
-                  lineBarsData: <LineChartBarData>[
-                    LineChartBarData(
-                      spots: _getSpots(results.values, index),
-                      dotData: (widget.freq == 'monthly'
-                          ? FlDotData(show: true)
-                          : FlDotData(show: false)),
+            child: (results.values[0].compareTo('-999.0') != 0
+                ? LineChart(
+                    LineChartData(
+                        backgroundColor: Colors.white,
+                        titlesData: titlesData,
+                        axisTitleData: axisTitles(results.values, title),
+                        lineBarsData: <LineChartBarData>[
+                          LineChartBarData(
+                            spots: _getSpots(results.values, index),
+                            dotData: (widget.freq == 'monthly'
+                                ? FlDotData(show: true)
+                                : FlDotData(show: false)),
+                          ),
+                        ]),
+                    // swapAnimationDuration: Duration(milliseconds: 150), // Optional
+                    // swapAnimationCurve: Curves.linear,
+                  )
+                : const Text(
+                    "Too wet to display actual values. But growing plants in the middle of the ocean is probably not the best idea anyways :)",
+                    style: TextStyle(
+                      fontSize: 18,
                     ),
-                  ]),
-              // swapAnimationDuration: Duration(milliseconds: 150), // Optional
-              // swapAnimationCurve: Curves.linear,
-            ),
+                  )),
           ),
         ),
       ],
@@ -243,13 +262,21 @@ class ResultsPageState extends State<ResultsPage> {
         ),
         children: <Widget>[
           SizedBox(
-            height: 500,
-            child: ListView.builder(
-                itemCount: plantList.plants.length,
-                itemBuilder: (context, index) {
-                  return _platListItem(index);
-                }),
-          ),
+              height: 500,
+              child: (widget.data.results[3].values[0].compareTo('-999.0') != 0
+                  ? ListView.builder(
+                      itemCount: plantList.plants.length,
+                      itemBuilder: (context, index) {
+                        return _platListItem(index);
+                      })
+                  : const Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: const Text(
+                          'Usually plants do not grow in the middle of the ocean... Perhaps you would like to try another location?',
+                          style: TextStyle(
+                            fontSize: 18,
+                          )),
+                    ))),
         ],
       ),
     );
@@ -265,9 +292,7 @@ class ResultsPageState extends State<ResultsPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  plantList.plants[index].CommonName +
-                      ' ' +
-                      _totalDiffernce(plantList.plants[index]).toString(),
+                  plantList.plants[index].CommonName,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                   softWrap: true,
                   textAlign: TextAlign.center,

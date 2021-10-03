@@ -90,7 +90,7 @@ class ResultsPageState extends State<ResultsPage> {
           _plantsPanel(),
           const Image(image: AssetImage('lib/data/nasa_app_icon.png')),
           const Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
             child: Text(
               '''Here are two sections:\n\n"Parameters" contains an analysis on energy, temperature, humidity and soil wetness, based on the location you indicated at the start and time resolution you told us at a later screen. Note that the x-axis is for every data entry you requested (f.e. 'hourly' and 'last week') and y-axis is for one of the four variables. We also calculated an average value so you would not have to.
 
@@ -270,8 +270,8 @@ class ResultsPageState extends State<ResultsPage> {
                         return _platListItem(index);
                       })
                   : const Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: const Text(
+                      padding: EdgeInsets.all(16),
+                      child: Text(
                           'Usually plants do not grow in the middle of the ocean... Perhaps you would like to try another location?',
                           style: TextStyle(
                             fontSize: 18,

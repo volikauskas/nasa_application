@@ -1,20 +1,26 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, non_constant_identifier_names
 
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:nasa_app/plant.dart';
 import 'package:nasa_app/searchres.dart';
 
+// ignore: must_be_immutable
 class ResultsPage extends StatefulWidget {
-  ResultsPage({Key? key, required this.data, required this.title})
+  ResultsPage(
+      {Key? key, required this.data, required this.title, required this.freq})
       : super(key: key);
 
   SearchRes data;
   final dataLabels = ["Light", "Temperature", "Humidity", "Soil Wetness"];
   final String title;
+  // ignore: prefer_typing_uninitialized_variables
+  final freq;
 
   @override
   State<StatefulWidget> createState() => ResultsPageState();
@@ -26,7 +32,20 @@ class ResultsPageState extends State<ResultsPage> {
   void initState() {
     convertData();
     getPlants();
-    // filterPlants();
+    sortPlants();
+  }
+
+  void sortPlants() {
+    plantList.plants.sort((Plants a, Plants b) {
+      int _diffA = _totalDiffernce(a);
+      int _diffB = _totalDiffernce(b);
+      if (_diffA < _diffB) {
+        return -1;
+      } else if (_diffA > _diffB) {
+        return 1;
+      }
+      return a.CommonName.compareTo(b.CommonName);
+    });
   }
 
   @override
@@ -48,13 +67,13 @@ class ResultsPageState extends State<ResultsPage> {
   List<String> noBrackets(List<String> data) {
     var newList = <String>[];
     for (int i = 0; i < data.length; i++) {
+      // ignore: prefer_typing_uninitialized_variables
       var value;
       if (i < data.length - 2) {
         value = data[i].split('[')[1].split(']')[0];
       } else {
         value = data[i].split('[')[1].split(']')[0];
       }
-      print(value);
       newList.add(value);
     }
     return newList;
@@ -125,10 +144,13 @@ class ResultsPageState extends State<ResultsPage> {
                   lineBarsData: <LineChartBarData>[
                     LineChartBarData(
                       spots: _getSpots(results.values, index),
+                      dotData: (widget.freq == 'monthly'
+                          ? FlDotData(show: true)
+                          : FlDotData(show: false)),
                     ),
                   ]),
-              swapAnimationDuration: Duration(milliseconds: 150), // Optional
-              swapAnimationCurve: Curves.linear,
+              // swapAnimationDuration: Duration(milliseconds: 150), // Optional
+              // swapAnimationCurve: Curves.linear,
             ),
           ),
         ),
@@ -144,9 +166,14 @@ class ResultsPageState extends State<ResultsPage> {
   FlAxisTitleData axisTitles(List<String> values, String title) =>
       FlAxisTitleData(
         show: true,
-        bottomTitle: AxisTitle(showTitle: true, titleText: 'Time'),
+        bottomTitle: AxisTitle(
+          showTitle: true,
+          margin: 15,
+          titleText: 'Time, ' + widget.freq,
+        ),
         leftTitle: AxisTitle(
             showTitle: true,
+            margin: -5,
             titleText: title + ', ' + values[values.length - 2]),
       );
 
@@ -158,6 +185,7 @@ class ResultsPageState extends State<ResultsPage> {
   }
 
   Widget _plantsPanel() {
+    sortPlants();
     return Card(
       color: Colors.lightGreen[50],
       elevation: 5,
@@ -189,7 +217,9 @@ class ResultsPageState extends State<ResultsPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  plantList.plants[index].CommonName,
+                  plantList.plants[index].CommonName +
+                      ' ' +
+                      _totalDiffernce(plantList.plants[index]).toString(),
                   style: const TextStyle(fontWeight: FontWeight.bold),
                   softWrap: true,
                   textAlign: TextAlign.center,
@@ -213,28 +243,102 @@ class ResultsPageState extends State<ResultsPage> {
               height: 50,
               child: Column(
                 children: [
+                  // _dataBoxes(
+                  //     widget.data.userValues.L,
+                  //     widget.data.userValues.T,
+                  //     widget.data.userValues.H,
+                  //     widget.data.userValues.W,
+                  //     index,
+                  //     false),
+                  // _dataBoxes(
+                  //     plantList.plants[index].L,
+                  //     plantList.plants[index].T,
+                  //     plantList.plants[index].H,
+                  //     plantList.plants[index].W,
+                  //     index,
+                  //     true),
                   _dataBoxes(
-                      plantList.plants[index].L,
-                      plantList.plants[index].T,
-                      plantList.plants[index].H,
-                      plantList.plants[index].W,
-                      plantList.plants[index].S,
-                      index,
-                      false),
-                  _dataBoxes(
-                      plantList.plants[index].L,
-                      plantList.plants[index].T,
-                      plantList.plants[index].H,
-                      plantList.plants[index].W,
-                      plantList.plants[index].S,
-                      index,
-                      true),
+                    plantList.plants[index].L,
+                    plantList.plants[index].T,
+                    plantList.plants[index].H,
+                    plantList.plants[index].W,
+                    widget.data.userValues.L,
+                    widget.data.userValues.T,
+                    widget.data.userValues.H,
+                    widget.data.userValues.W,
+                    index,
+                  ),
                 ],
               ),
             ),
           )
         ],
       ),
+    );
+  }
+
+  Widget _plantDialogText() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+      child: RichText(
+          text: const TextSpan(
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.black87,
+        ),
+        children: <TextSpan>[
+          TextSpan(
+            text: 'Sunlight\n\n',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          TextSpan(
+            text:
+                '''1 – The plant can grow in the low-light areas: it needs 0.06 – 0.1943 kWh sunlight per hour\n
+2. The plant can grow in the medium-light areas: it requires 0.1943 – 0.518 kWh sunlight per hour\n
+3. The plant can grow in the high-light areas: it requires 0.518 – 2.59 kWh sunlight per hour\n
+4. The plant should grow in the high-light areas: it requires more than 2.59 kWh sunlight per hour.\n\n''',
+          ),
+          TextSpan(
+            text: 'Temperature\n\n',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          TextSpan(
+            text: '''1.	The plant needs at least 14 °C daily temperature\n
+2.	The plant needs 21-25 °C daily temperature\n
+3.	The plant needs more than 25 °C daily temperature\n\n''',
+          ),
+          TextSpan(
+            text: 'Relative Humidity\n\n',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          TextSpan(
+            text: '''1.	The plant requires high humidity (50% or higher)\n
+2.	The plant requires average humidity (25% to 49%)\n
+3.	The plant requires low humidity (5% to 24%)\n\n''',
+          ),
+          TextSpan(
+            text: 'Soil wetness\n\n',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          TextSpan(
+            text: '''1.	Soil has to be moist (50 – 100 %)\n
+2.	Soil can be dry before re-watering (<30 %)\n
+3.	Soil can be moderately dry before re-watering (30 – 50 %)\n\n''',
+          ),
+        ],
+      )),
     );
   }
 
@@ -245,6 +349,7 @@ class ResultsPageState extends State<ResultsPage> {
           return AlertDialog(
             content: SizedBox(
               height: 300,
+              width: MediaQuery.of(context).size.width - 200,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -264,10 +369,23 @@ class ResultsPageState extends State<ResultsPage> {
                         ),
                       ),
                     ),
-                    Text(plantList.plants[index].CommonName),
-                    const Placeholder(
-                      fallbackHeight: 100,
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(plantList.plants[index].CommonName,
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
+                      child: Container(
+                        height: 2,
+                        color: Colors.yellow[500],
+                      ),
+                    ),
+                    _plantDialogText(),
                   ],
                 ),
               ),
@@ -276,35 +394,171 @@ class ResultsPageState extends State<ResultsPage> {
         });
   }
 
-  Widget _dataBoxes(L, T, H, W, S, index, isPlant) {
+  int _totalDiffernce(Plants plant) {
+    return _difference(widget.data.userValues.L, plant.L) +
+        _difference(widget.data.userValues.T, plant.T) +
+        _difference(widget.data.userValues.H, plant.H) +
+        _difference(widget.data.userValues.W, plant.W);
+  }
+
+  int _difference(int userV, String V) {
+    int _minDif = 10;
+    if (V.length == 1) {
+      int _V = int.parse(V);
+      int dif = (_V - userV).abs();
+      _minDif = min(_minDif, dif);
+    } else if (V.length == 3) {
+      var split = V.split('-');
+      int _V1 = int.parse(split[0]);
+      int dif1 = (_V1 - userV).abs();
+      _minDif = min(_minDif, dif1);
+
+      _V1 = int.parse(split[1]);
+      dif1 = (_V1 - userV).abs();
+      _minDif = min(_minDif, dif1);
+    }
+    return _minDif;
+  }
+
+  Color? _getColor(diff) {
+    if (diff == 0) {
+      return Colors.green[200];
+    }
+    if (diff == 1) {
+      return Colors.yellow[200];
+    }
+    return Colors.red[200];
+  }
+
+  Widget _dataBoxes(L, T, H, W, userL, userT, userH, userW, index) {
     return Expanded(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            // decoration: const BoxDecoration(color: Colors.green),
-            child: isPlant ? Text(L.toString()) : const Text('L'),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+                color: _getColor(_difference(userL, L)),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(userL.toString()),
+                ),
+              ),
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(L.toString()),
+                ),
+              )
+            ],
           ),
-          Container(
-            // decoration: const BoxDecoration(color: Colors.green),
-            child: isPlant ? Text(T.toString()) : const Text('T'),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+                color: _getColor(_difference(userT, T)),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(userT.toString()),
+                ),
+              ),
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(T.toString()),
+                ),
+              )
+            ],
           ),
-          Container(
-            // decoration: const BoxDecoration(color: Colors.green),
-            child: isPlant ? Text(L.toString()) : const Text('H'),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+                color: _getColor(_difference(userH, H)),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(userH.toString()),
+                ),
+              ),
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(H.toString()),
+                ),
+              )
+            ],
           ),
-          Container(
-            // decoration: const BoxDecoration(color: Colors.green),
-            child: isPlant ? Text(L.toString()) : const Text('W'),
-          ),
-          Container(
-            // decoration: const BoxDecoration(color: Colors.green),
-            child: isPlant ? Text(L.toString()) : const Text('S'),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+                color: _getColor(_difference(userW, W)),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(userW.toString()),
+                ),
+              ),
+              Container(
+                // decoration: const BoxDecoration(color: Colors.green),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                  child: Text(W.toString()),
+                ),
+              )
+            ],
           ),
         ],
       ),
     );
   }
+
+  // Widget _dataBoxes(L, T, H, W, index, isPlant) {
+  //   return Expanded(
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //       children: [
+  //         Container(
+  //           // decoration: const BoxDecoration(color: Colors.green),
+  //           color: (isPlant ? null : Colors.green[200]),
+
+  //           child: Text(L.toString()),
+  //         ),
+  //         Container(
+  //           // decoration: const BoxDecoration(color: Colors.green),
+  //           child: Text(T.toString()),
+  //         ),
+  //         Container(
+  //           // decoration: const BoxDecoration(color: Colors.green),
+  //           child: Text(H.toString()),
+  //         ),
+  //         Container(
+  //           // decoration: const BoxDecoration(color: Colors.green),
+  //           child: Text(W.toString()),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Future<String> getJson() {
     return DefaultAssetBundle.of(context).loadString("lib/data/plants.json");

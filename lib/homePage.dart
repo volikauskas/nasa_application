@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
-import 'package:nasa_app/Widgets/parameterPage.dart';
+import 'package:nasa_app/parameterPage.dart';
+// ignore: library_prefixes
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-const myApiKey = "AIzaSyDLWD1z3zGbJ6qv3njHqCG_grtxMEMTm_o";
+var myApiKey = DotEnv.env['API_KEY'];
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -25,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return PlacePicker(
-      apiKey: myApiKey,
+      apiKey: myApiKey!,
       initialPosition: HomePage.kInitialPosition,
       useCurrentLocation: true,
       selectInitialPosition: true,
@@ -39,7 +41,6 @@ class _HomePageState extends State<HomePage> {
         // print(selectedPlace.geometry!.location.lat.toString() +
         //     ' ' +
         //     selectedPlace.geometry!.location.lat.toString());
-        print('place picked');
         openParametersPage(result.formattedAddress,
             result.geometry?.location.lat, result.geometry?.location.lng);
         // setState(() {
@@ -75,13 +76,19 @@ class _HomePageState extends State<HomePage> {
       //                 ),
       //         );
       // },
-      // pinBuilder: (context, state) {
-      //   if (state == PinState.Idle) {
-      //     return Icon(Icons.favorite_border);
-      //   } else {
-      //     return Icon(Icons.favorite);
-      //   }
-      // },
+      pinBuilder: (context, state) {
+        if (state == PinState.Idle) {
+          return Icon(
+            Icons.local_florist,
+            color: Colors.amber,
+          );
+        } else {
+          return Icon(
+            Icons.local_florist_outlined,
+            color: Colors.amber,
+          );
+        }
+      },
 
       // Text(selectedPlace.formattedAddress ?? ""),
     );
@@ -89,7 +96,6 @@ class _HomePageState extends State<HomePage> {
 
   void openParametersPage(address, lat, lon) {
     // do a request to the server
-    print('got data');
     Navigator.push(
         context,
         MaterialPageRoute(

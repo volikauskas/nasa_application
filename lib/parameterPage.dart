@@ -6,9 +6,10 @@ import 'package:date_field/date_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:rounded_loading_button/rounded_loading_button.dart';
 
-import '../resultsPage.dart';
-import '../searchres.dart';
+import 'resultsPage.dart';
+import 'searchres.dart';
 // ignore: import_of_legacy_library_into_null_safe
 
 // ignore: must_be_immutable
@@ -33,55 +34,115 @@ class ParameterPageState extends State<ParameterPage> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    // _btnController = RoundedLoadingButtonController();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title.toString()),
       ),
-      body: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            _locationFields(),
-            _datePickers(),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _dropTimeList(),
-                  // _dropParamList(),
-                ],
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              _locationFields(),
+              _datePickers(),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _dropTimeList(),
+                    // _dropParamList(),
+                  ],
+                ),
               ),
-            ),
-            Center(
-              child: ElevatedButton(
-                onPressed: _search,
-                child: const Text('Search'),
+              Center(
+                child: RoundedLoadingButton(
+                  color: Colors.yellow[400],
+                  child: const Text('Search',
+                      style: TextStyle(color: Colors.black87)),
+                  controller: _btnController,
+                  onPressed: _search,
+                ),
               ),
-            ),
-          ],
+              Visibility(
+                visible: _loadingTextVisible,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'You have requested $_noOfEntries entries. This may take some time to complete.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.red[500],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
+  bool _loadingTextVisible = false;
+
+  var _noOfEntries = 0;
+
+  RoundedLoadingButtonController _btnController =
+      RoundedLoadingButtonController();
+
+  int _getEntries() {
+    Duration _dur = _endDate.difference(_startDate);
+    int _noOfParameters = 4;
+    if (_selectedTimeDrop == 'hourly') {
+      return _dur.inHours * _noOfParameters;
+    } else if (_selectedTimeDrop == 'daily') {
+      return _dur.inDays * _noOfParameters;
+    } else if (_selectedTimeDrop == 'monthly') {
+      return (_endDate.year - _startDate.year + 1) * 13 * _noOfParameters;
+    }
+    return 1253;
+  }
+
   void _search() async {
-    if (_formKey.currentState!.validate()) {
+    // _loadingTextVisible = true;
+
+    // change the number of entries
+
+    if (_formKey.currentState!.validate() &&
+        _formKey.currentState?.validate() != null) {
+      _noOfEntries = _getEntries();
+      if (_noOfEntries > 500) {
+        setState(() {
+          _noOfEntries = _getEntries();
+          _loadingTextVisible = true;
+        });
+      }
+
       var url =
-          "http://192.168.0.4:5000/api/freq=$_selectedTimeDrop&start_year=${_startDate.year}${_startDate.month.toString().padLeft(2, '0')}${_startDate.day.toString().padLeft(2, '0')}&end_year=${_endDate.year}${_endDate.month.toString().padLeft(2, '0')}${_endDate.day.toString().padLeft(2, '0')}&long=${widget.locationLon}&lat=${widget.locationLat}";
+          "http://sunshine-hackathon.eu.ngrok.io/api/freq=$_selectedTimeDrop&start_year=${_startDate.year}${_startDate.month.toString().padLeft(2, '0')}${_startDate.day.toString().padLeft(2, '0')}&end_year=${_endDate.year}${_endDate.month.toString().padLeft(2, '0')}${_endDate.day.toString().padLeft(2, '0')}&long=${widget.locationLon}&lat=${widget.locationLat}";
       final response = await http.get(Uri.parse(url));
-      // print(response.statusCode);
       SearchRes data = SearchRes.fromJson(jsonDecode(response.body));
+      setState(() {
+        _loadingTextVisible = false;
+        _btnController.stop();
+      });
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ResultsPage(
             title: widget.title.toString(),
             data: data,
+            freq: _selectedTimeDrop,
           ),
         ),
       );
     }
+    _btnController.stop();
   }
 
   // var _yearStart = null;
@@ -165,12 +226,12 @@ class ParameterPageState extends State<ParameterPage> {
   //   );
   // }
 
-  final _firstDate = DateTime(1970);
-  final _lastDate = DateTime(2021);
-  var now = DateTime.now();
+  final _firstDate = DateTime(1981, 1, 2);
+  final _lastDate = DateTime.now();
 
-  var _startDate = DateTime(2018);
-  var _endDate = DateTime(2019);
+  var _startDate = DateTime(
+      DateTime.now().year - 2, DateTime.now().month, DateTime.now().day);
+  var _endDate = DateTime(2020, 12, 31);
 
   Widget _datePickers() {
     return Column(
@@ -180,7 +241,7 @@ class ParameterPageState extends State<ParameterPage> {
           child: DateTimeFormField(
             firstDate: _firstDate,
             lastDate: _lastDate,
-            initialDate: _startDate,
+            initialValue: _startDate,
             decoration: const InputDecoration(
               hintStyle: TextStyle(color: Colors.black45),
               errorStyle: TextStyle(color: Colors.redAccent),
@@ -206,6 +267,9 @@ class ParameterPageState extends State<ParameterPage> {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: DateTimeFormField(
+            firstDate: _firstDate,
+            lastDate: _lastDate,
+            initialValue: _endDate,
             decoration: const InputDecoration(
               hintStyle: TextStyle(color: Colors.blueAccent),
               errorStyle: TextStyle(color: Colors.redAccent),
@@ -310,7 +374,7 @@ class ParameterPageState extends State<ParameterPage> {
       elevation: 16,
       underline: Container(
         height: 2,
-        color: Colors.blueAccent,
+        color: Colors.yellow[500],
       ),
       onChanged: (String? newValue) {
         setState(() {

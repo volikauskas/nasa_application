@@ -116,8 +116,11 @@ class ResultsPageState extends State<ResultsPage> {
                 itemBuilder: (context, index) {
                   return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: _graph(widget.dataLabels[index],
-                          widget.data.results[index], index));
+                      child: _graph(
+                          widget.dataLabels[index],
+                          widget.data.results[index],
+                          widget.data.averagesPerDay,
+                          index));
                 }),
           ),
         ],
@@ -125,7 +128,8 @@ class ResultsPageState extends State<ResultsPage> {
     );
   }
 
-  Widget _graph(String title, Results results, index) {
+  Widget _graph(
+      String title, Results results, AveragesPerDay averagesPerDay, index) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -138,6 +142,20 @@ class ResultsPageState extends State<ResultsPage> {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
+                ),
+              ),
+            )),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Daily average: " +
+                    _getAverageValue(averagesPerDay, index) +
+                    " " +
+                    results.values[results.values.length - 2],
+                style: const TextStyle(
+                  fontSize: 18,
                 ),
               ),
             )),
@@ -167,6 +185,21 @@ class ResultsPageState extends State<ResultsPage> {
     );
   }
 
+  _getAverageValue(averagesPerDay, index) {
+    if (index == 0) {
+      return averagesPerDay.L.toStringAsFixed(3);
+    }
+    if (index == 1) {
+      return averagesPerDay.T.toStringAsFixed(3);
+    }
+    if (index == 2) {
+      return averagesPerDay.H.toStringAsFixed(3);
+    }
+    if (index == 3) {
+      return averagesPerDay.W.toStringAsFixed(3);
+    }
+  }
+
   FlTitlesData get titlesData => FlTitlesData(
         rightTitles: SideTitles(showTitles: false),
         topTitles: SideTitles(showTitles: false),
@@ -187,7 +220,7 @@ class ResultsPageState extends State<ResultsPage> {
       );
 
   List<FlSpot> _getSpots(List<String> values, index) {
-    var _length = (index == 3 ? values.length - 3 : values.length - 2);
+    var _length = (index == 3 ? values.length - 4 : values.length - 2);
     return List.generate(_length, (i) {
       return FlSpot(i * 1.0, double.parse(values[i]));
     });

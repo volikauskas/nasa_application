@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print, file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import 'package:nasa_app/parameterPage.dart';
@@ -26,6 +27,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Light Theme
+    final ThemeData lightTheme = ThemeData.light().copyWith(
+      // Background color of the FloatingCard
+      cardColor: Colors.white,
+      buttonTheme: ButtonThemeData(
+        // Select here's button color
+        buttonColor: Colors.yellow[400],
+        textTheme: ButtonTextTheme.primary,
+      ),
+    );
+
     return PlacePicker(
       apiKey: myApiKey!,
       initialPosition: HomePage.kInitialPosition,
@@ -78,14 +90,18 @@ class _HomePageState extends State<HomePage> {
       // },
       pinBuilder: (context, state) {
         if (state == PinState.Idle) {
-          return Icon(
-            Icons.local_florist,
-            color: Colors.amber,
+          return const Image(
+            image: AssetImage('lib/data/nasa_app_icon.png'),
+            width: 200,
+            height: 200,
+            color: Colors.black87,
           );
         } else {
-          return Icon(
-            Icons.local_florist_outlined,
-            color: Colors.amber,
+          return const Image(
+            image: AssetImage('lib/data/crop_icon.png'),
+            width: 30,
+            height: 30,
+            color: Colors.black87,
           );
         }
       },

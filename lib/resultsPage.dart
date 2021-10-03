@@ -7,6 +7,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:nasa_app/plant.dart';
 import 'package:nasa_app/searchres.dart';
 
@@ -86,6 +88,7 @@ class ResultsPageState extends State<ResultsPage> {
         children: [
           _energyPanel(),
           _plantsPanel(),
+          const Image(image: AssetImage('lib/data/nasa_app_icon.png')),
         ],
       ),
     );
@@ -98,7 +101,13 @@ class ResultsPageState extends State<ResultsPage> {
       child: ExpansionTile(
         collapsedTextColor: Colors.black87,
         textColor: Colors.black87,
-        title: const Text('Parameters'),
+        title: const Text(
+          'Parameters',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         children: <Widget>[
           SizedBox(
             height: 500,
@@ -192,7 +201,13 @@ class ResultsPageState extends State<ResultsPage> {
       child: ExpansionTile(
         collapsedTextColor: Colors.black87,
         textColor: Colors.black87,
-        title: const Text('Suggested plants'),
+        title: const Text(
+          'Suggested plants',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         children: <Widget>[
           SizedBox(
             height: 500,

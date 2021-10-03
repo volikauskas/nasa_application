@@ -1,14 +1,13 @@
 // ignore_for_file: avoid_print, file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import 'package:nasa_app/parameterPage.dart';
 // ignore: library_prefixes
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
-
-var myApiKey = DotEnv.env['API_KEY'];
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -37,9 +36,8 @@ class _HomePageState extends State<HomePage> {
         textTheme: ButtonTextTheme.primary,
       ),
     );
-
     return PlacePicker(
-      apiKey: myApiKey!,
+      apiKey: "AIzaSyDLWD1z3zGbJ6qv3njHqCG_grtxMEMTm_o",
       initialPosition: HomePage.kInitialPosition,
       useCurrentLocation: true,
       selectInitialPosition: true,

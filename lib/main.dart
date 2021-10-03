@@ -1,11 +1,13 @@
 // ignore_for_file: avoid_print
-import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter/material.dart';
 
 import 'homePage.dart';
 
 void main() async {
-  await DotEnv.load(fileName: ".env");
+  // WidgetsFlutterBinding.ensureInitialized(); // Required by FlutterConfig
+  // await FlutterConfig.loadEnvVariables();
+
   runApp(const MyApp());
 }
 
